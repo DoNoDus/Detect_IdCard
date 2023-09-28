@@ -14,29 +14,11 @@ def tk_start():
         widget.destroy()
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
-    window_width = 1600
+    window_width = 1200
     window_height = 800
     x_coordinate = (screen_width / 2) - (window_width / 2)
     y_coordinate = (screen_height / 2) - (window_height / 2)
     root.geometry("%dx%d+%d+%d" % (window_width, window_height, x_coordinate, y_coordinate - 100))
-
-# def run_ocr():
-#     file_path = filedialog.askopenfilename(title="Open File", filetypes=[("All files", "*.*")])
-#     if file_path:
-#         # Disable the Open File button while OCR is running
-#         open_file_button.config(state=tk.DISABLED)
-#         def ocr_task(): 
-#             try:
-#                 profile = ct.start(path=file_path)
-#                 update_ui(profile)
-#             except Exception as e:
-#                 update_ui(f"Error: {str(e)}")
-#             finally:
-#                 # Re-enable the Open File button when OCR is done
-#                 open_file_button.config(state=tk.NORMAL)
-
-#         ocr_thread = threading.Thread(target=ocr_task)
-#         ocr_thread.start()
 
 def run_ocr():
     file_path = filedialog.askopenfilename()
@@ -84,17 +66,13 @@ def update_ui(profile):
 
 root = tk.Tk()
 root.title("Identification Card")
-
 tk_start()
-
 # Create buttons to open file and folder dialogs
 open_file_button = tk.Button(root, text="Open File", command=run_ocr)
 open_file_button.pack(pady=10)
-
 progress_var = tk.DoubleVar()
 progress_bar = ttk.Progressbar(root, variable=progress_var, maximum=100, length=400)
 progress_bar.pack(pady=10)
-
 label1 = tk.Label(root, text="")
 label1.pack(fill='x')
 label2 = tk.Label(root, text="")

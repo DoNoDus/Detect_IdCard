@@ -140,7 +140,6 @@ def start(path):
             w_[i+1]= tempw
     data_thai = []
     data_en = []
-
     for i in range(len(x_)):
         im2 = cv2.rectangle(im2, (x_[i], y_[i]), (x_[i] + w_[i], y_[i] + h_[i]), (0, 255, 0), 2)
         # show(im2)
@@ -154,7 +153,6 @@ def start(path):
             data_thai.append(thai)
         if en != '' and en != '\n' :
             data_en.append(en)
-
     idCard = findID(data_thai)
     nameTH = findName(data_thai, mode = 'th')
     nameEN = findName(data_en, mode = 'en')
