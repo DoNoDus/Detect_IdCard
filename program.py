@@ -121,9 +121,7 @@ label12 = tk.Label(root, text="")
 label12.pack(fill='x')
 label13 = tk.Label(root, text="")
 label13.pack(fill='x')
-
 # Create labels to display selected file and folder paths
 file_label = tk.Label(root, text="")
 file_label.pack()
-
 root.mainloop()
