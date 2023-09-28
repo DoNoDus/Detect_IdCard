@@ -178,7 +178,7 @@ def start(path):
     profile.append(dateOfExpiryEN)
     profile.append(makerName)
     
-    return profile, img , im2 
+    return profile, img , im2 ,thresh1
 
 if __name__ == '__main__':
 
