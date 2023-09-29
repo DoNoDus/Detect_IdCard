@@ -1,13 +1,19 @@
 import cv2
 import pytesseract
 import re
+import os
 
 month_mapping = {
     "Jan": "ม.ค.","Feb": "ก.พ.","Mar": "มี.ค.","Apr": "เม.ย.","May": "พ.ค.","Jun": "มิ.ย.",
     "Jul": "ก.ค.","Aug": "ส.ค.","Sep": "ก.ย.","Oct": "ต.ค.","Nov": "พ.ย.","Dec": "ธ.ค."
 }
 
-path=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# path=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+cwd = os.getcwd()
+print(cwd)
+path=cwd + r'\img_to_text\Tesseract-OCR\tesseract.exe'
+print(path)
+# path=r'C:\Users\chira\OneDrive\เดสก์ท็อป\image processing\img_to_text\Tesseract-OCR\tesseract.exe'
 pytesseract.pytesseract.tesseract_cmd = path
 
 def show(title,img):
